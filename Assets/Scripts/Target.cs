@@ -10,7 +10,10 @@ public class Target : MonoBehaviour
         {
             // Update Score
             // Update wave stuff
-
+            // Destroy Ball
+            Destroy(other.gameObject);
+            // Destroy Target
+            Destroy(gameObject);
         }
     }
 }
