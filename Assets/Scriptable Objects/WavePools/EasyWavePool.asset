@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a901d0937e39f4bafcafab95a4e615, type: 3}
+  m_Name: EasyWavePool
+  m_EditorClassIdentifier: 
+  waveDifficulty: 0
+  waves:
+  - {fileID: 6535421541080507825, guid: 61fd6f95f3388884d9a5894eb089e08e, type: 3}
+  - {fileID: 3375974101595683737, guid: 60018d18a8281d3458ee4fe77079394a, type: 3}
+  - {fileID: 326052426590331794, guid: 7c7d38f5441d45d43ab0ea2b50b5d5ca, type: 3}
+  - {fileID: 2206520727665773399, guid: 6560dba7f19678b4e8e931e4d1d555e7, type: 3}

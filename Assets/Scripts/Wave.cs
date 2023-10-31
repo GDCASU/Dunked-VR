@@ -13,6 +13,8 @@ public class Wave : MonoBehaviour
 
     private void Start()
     {
+        ITarget.onTargetHit += HandleTargetHit;
+
         targetList = new List<GameObject>();
         AddTargetsToList();
         numberOfTargets = targetList.Count;
