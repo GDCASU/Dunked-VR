@@ -36,7 +36,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] public UnityEvent<int> onWaveStart;
 
     // Private Flags
-    private bool gameOverFlag = false;
+    private bool isGamePlaying = false;
     
     // Private wave variables
     private Wave currentWave = null;
@@ -61,14 +61,9 @@ public class WaveManager : MonoBehaviour
         _lives = GetComponent<LivesManager>();
     }
 
-    private void Start()
-    {
-        StartGame();
-    }
-
     private void Update()
     {
-        if (!gameOverFlag)
+        if (isGamePlaying)
         {
             Timer();
         }
@@ -85,12 +80,14 @@ public class WaveManager : MonoBehaviour
             SpawnWave();                       // Spawn the first wave after short delay
         }
 
-        gameOverFlag = false;
+        isGamePlaying = true;
     }
 
     public void EndGame()
     {
-        gameOverFlag = true;
+        // SAVE SCORE BEFORE RESET
+        ScoreManager.instance.ResetScore();
+        isGamePlaying = false;
         waveCounter = 1;
         waveCountMult = 1;
         currentDifficulty = 0;

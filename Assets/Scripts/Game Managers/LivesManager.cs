@@ -23,6 +23,7 @@ public class LivesManager : MonoBehaviour
     public void ResetLives()
     {
         playerLives = playerMaxLives;
+        onLifeUpdate?.Invoke(playerLives);
     }
 
     public void LoseLife()
