@@ -15,9 +15,14 @@ public class WaveManager : MonoBehaviour
 {
     public static WaveManager instance;
 
-    [Header("Wave Pools")]
+    [Header("Wave Pool")]
     [SerializeField] private int changePoolAfterWaves = 5;
     [SerializeField] private List<WavePool> wavePools = new List<WavePool>();
+
+    [Header("Timer")]
+    [SerializeField] private float maxTimerTime = 30f;      // This is the max time given to a wave at the start of the game
+    [SerializeField] private float timerDecrement = 1f;     // This amt will be decremented from the max time after every wave
+    [SerializeField] private float timeLimitCap = 0f;       // This limits the timerTime from going under a certain amt after a period of time
 
     [Header("Difficulty")]
     [SerializeField] public WaveDifficulty currentDifficulty = 0;       // Should not be tampered with; just for testing
@@ -25,9 +30,18 @@ public class WaveManager : MonoBehaviour
     [Header("Events")]
     [SerializeField] public UnityEvent<int> onWaveStart;
 
+    // Private wave variables
+    private Wave currentWave = null;
     private WavePool currentWavePool = null;
     private int waveCounter = 1;
     private int waveCountMult = 1; // Used to keep track of when to change WavePools
+
+    // Private timer variables; these will be updated throughout the game
+    private float currentMaxTimerTime;
+    private float timerTime;
+
+    // Components
+    private Lives _lives;
 
     private void Awake()        // Handle Singleton
     {
@@ -39,12 +53,47 @@ public class WaveManager : MonoBehaviour
 
     private void Start()
     {
+        _lives.GetComponent<Lives>();
+
         if (wavePools.Count > 0)
         {
             currentWavePool = wavePools[0];     // Start currentWavePool at first wave in list
             SpawnWave();                       // Spawn the first wave after short delay
         }
     }
+
+    private void Update()
+    {
+        Timer();
+    }
+
+    #region Timer
+    private void Timer()
+    {
+        if (timerTime >= 0)
+            timerTime -= Time.deltaTime;
+        else
+        {
+            // End the Wave
+            currentWave.StopWave();
+            _lives.LoseLife();
+
+            if (_lives.playerLives > 0)
+            {
+                UpdateWaveCounter();
+                SpawnWave();
+            }
+        }
+    }
+
+    public void ResetTimer()
+    {
+        if (currentMaxTimerTime > timeLimitCap)     // Decrement the max time as long as the cap is not reached
+            currentMaxTimerTime--;
+
+        timerTime = currentMaxTimerTime;        // Reset timer value
+    }
+    #endregion
 
     public void RaiseDifficulty()
     {
@@ -60,7 +109,8 @@ public class WaveManager : MonoBehaviour
         // Event for UI
         onWaveStart?.Invoke(waveCounter);
  
-        Instantiate(currentWavePool.RandomWaveSelect(), gameObject.transform);
+        GameObject wave = Instantiate(currentWavePool.RandomWaveSelect(), gameObject.transform);
+        currentWave = wave.gameObject.GetComponent<Wave>();
     }
 
     public void UpdateWaveCounter()         // Update waveCounter and check if we need to raise the difficulty
@@ -70,6 +120,7 @@ public class WaveManager : MonoBehaviour
         if (waveCounter >= changePoolAfterWaves * waveCountMult)
         {
             RaiseDifficulty();
+            ResetTimer();
             waveCountMult++;
         }
     }

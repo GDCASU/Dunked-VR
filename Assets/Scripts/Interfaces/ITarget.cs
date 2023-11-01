@@ -23,7 +23,7 @@ public abstract class ITarget : MonoBehaviour
             if (debug) Debug.Log(other.gameObject.name + " was recognized as \"Ball\".");
             // Update Player Score
             // Update wave stuff
-            onTargetHit.Invoke(gameObject);
+            onTargetHit?.Invoke(gameObject);
             // Destroy Ball
             Destroy(other.gameObject);
             // Destroy Target

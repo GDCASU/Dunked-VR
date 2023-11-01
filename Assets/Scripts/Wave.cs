@@ -6,10 +6,9 @@ public class Wave : MonoBehaviour
 {
     [SerializeField] private WaveDifficulty difficulty = 0;  // Just for classification (SHOULD NOT BE USED)
     
-    private List<GameObject> targetList;
+    // Private stuff
+    private List<GameObject> targetList;    // List of current targets in wave
     private int numberOfTargets = 0;
-
-    private float timerTime = 5f;
 
     private void Start()
     {
@@ -20,14 +19,9 @@ public class Wave : MonoBehaviour
         numberOfTargets = targetList.Count;
     }
 
-    private void Update()
-    {
-        CheckTimer();
-    }
-
     private void AddTargetsToList()
     {
-        for (int i = 0; i < transform.childCount; i++)      // Finds all children of Wave object and stores th
+        for (int i = 0; i < transform.childCount; i++)      // Finds all children of Wave object and stores the targets
         {
             GameObject child = transform.GetChild(i).gameObject;
             if (!targetList.Contains(child))
@@ -45,24 +39,8 @@ public class Wave : MonoBehaviour
             numberOfTargets--;
 
             if (numberOfTargets <= 0)           // Invoke the event to move to the next wave and end the current wa
-                EndOfWave();
+                EndWave();
         }
-    }
-
-    private void CheckTimer()
-    {
-        bool isEmpty = false;
-
-        if (timerTime > 0)
-            timerTime -= Time.deltaTime;
-        else
-        {
-            isEmpty = CheckListEmpty();
-            timerTime = 5f;
-        }
-
-        if (isEmpty)
-            EndOfWave();
     }
 
     private bool CheckListEmpty()
@@ -75,12 +53,14 @@ public class Wave : MonoBehaviour
         return false;
     }
 
-    private void EndOfWave()
+    private void EndWave()  // Destroy the wave and update status of wave difficulty/etc; used when the player completes a wave
     {
         WaveManager.instance.UpdateWaveCounter();
-        WaveManager.instance.SpawnWave();
-        Destroy(gameObject);                  // MAY USE TO CLEAN UP CLUTTER IN GAME
+        Destroy(gameObject);
     }
 
-
+    public void StopWave()      // Just destroy the wave
+    {
+        Destroy(gameObject);
+    }
 }
