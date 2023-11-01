@@ -49,7 +49,7 @@ public class WaveManager : MonoBehaviour
     private float timerTime;
 
     // Components
-    private Lives _lives;
+    private LivesManager _lives;
 
     private void Awake()        // Handle Singleton
     {
@@ -58,7 +58,7 @@ public class WaveManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        _lives = GetComponent<Lives>();
+        _lives = GetComponent<LivesManager>();
     }
 
     private void Start()

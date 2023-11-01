@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
-public abstract class ITarget : MonoBehaviour
+public class Target : MonoBehaviour
 {
     // Events
     public static event Action<GameObject> onTargetHit;
@@ -22,6 +22,7 @@ public abstract class ITarget : MonoBehaviour
         {
             if (debug) Debug.Log(other.gameObject.name + " was recognized as \"Ball\".");
             // Update Player Score
+            ScoreManager.instance.AddScore(score);
             // Update wave stuff
             onTargetHit?.Invoke(gameObject);
             // Destroy Ball

@@ -12,7 +12,7 @@ public class Wave : MonoBehaviour
 
     private void Start()
     {
-        ITarget.onTargetHit += HandleTargetHit;
+        Target.onTargetHit += HandleTargetHit;
 
         targetList = new List<GameObject>();
         AddTargetsToList();

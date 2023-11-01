@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingTarget : ITarget
+public class MovingTarget : Target
 {
     [Header("Movement")]
     [SerializeField] private Vector3 movementVector;

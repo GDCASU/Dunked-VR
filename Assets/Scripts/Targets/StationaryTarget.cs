@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StationaryTarget : ITarget
+public class StationaryTarget : Target
 {
     
 }

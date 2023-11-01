@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
 
-public class RotatingTarget : ITarget
+public class RotatingTarget : Target
 {
     [SerializeField] private Transform pivotTransform;
     [SerializeField] private float moveSpeed = -5f;

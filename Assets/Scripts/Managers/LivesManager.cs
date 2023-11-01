@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lives : MonoBehaviour
+public class LivesManager : MonoBehaviour
 {
     // Events for UI and other stuff; the current playerLives is passed into the event
     public static event Action<int> onLifeUpdate;
