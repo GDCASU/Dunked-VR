@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class RotatingTarget : ITarget
 {
-
     [SerializeField] private Transform pivotTransform;
     [SerializeField] private float moveSpeed = -5f;
     [SerializeField] private float angularSpeed = 100f;

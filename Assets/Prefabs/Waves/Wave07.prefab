@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bf366d13b72604e81e09d3eb5e5e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 0
+  difficulty: 1
 --- !u!1001 &2911132104414267594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100,11 +100,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2722082599026431584, guid: 718e6442a9d49ae49aaccdf6f7c92881, type: 3}
       propertyPath: movementVector.x
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2722082599026431584, guid: 718e6442a9d49ae49aaccdf6f7c92881, type: 3}
       propertyPath: movementVector.y
-      value: -3
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 5014585287874747238, guid: 718e6442a9d49ae49aaccdf6f7c92881, type: 3}
       propertyPath: m_Name

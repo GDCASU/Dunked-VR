@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bf366d13b72604e81e09d3eb5e5e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 0
+  difficulty: 1
 --- !u!1001 &4126563335121892279
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120,6 +120,10 @@ PrefabInstance:
     - target: {fileID: 20845495337813753, guid: d23b0a8f163b40e488533e6b57a73ddb, type: 3}
       propertyPath: m_Name
       value: Stationary Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152501567939208799, guid: d23b0a8f163b40e488533e6b57a73ddb, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5489304932001555694, guid: d23b0a8f163b40e488533e6b57a73ddb, type: 3}
       propertyPath: m_LocalPosition.x

@@ -114,6 +114,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stationary Target
       objectReference: {fileID: 0}
+    - target: {fileID: 8937147030528563510, guid: debb08475a7c8db42beb5f9703af9b6d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2534964839176971238, guid: d875b9fabb62b97428564381d79fd4e2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6191242787346462519, guid: debb08475a7c8db42beb5f9703af9b6d, type: 3}

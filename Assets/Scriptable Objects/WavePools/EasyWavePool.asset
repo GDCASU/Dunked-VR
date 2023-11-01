@@ -15,6 +15,7 @@ MonoBehaviour:
   waveDifficulty: 0
   waves:
   - {fileID: 6535421541080507825, guid: 61fd6f95f3388884d9a5894eb089e08e, type: 3}
-  - {fileID: 3375974101595683737, guid: 60018d18a8281d3458ee4fe77079394a, type: 3}
+  - {fileID: 3184213201880708053, guid: 6bbac3dfd6c1e02419da89b1ebab9792, type: 3}
   - {fileID: 326052426590331794, guid: 7c7d38f5441d45d43ab0ea2b50b5d5ca, type: 3}
   - {fileID: 2206520727665773399, guid: 6560dba7f19678b4e8e931e4d1d555e7, type: 3}
+  - {fileID: 3132782233804859240, guid: cab8b3b0b4780cc4bb19885361287f97, type: 3}

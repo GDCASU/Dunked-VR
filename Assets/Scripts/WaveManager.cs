@@ -7,19 +7,17 @@ public enum WaveDifficulty
 {
     easy = 0,
     medium = 1,
-    hard = 2
+    hard = 2,
+    veryHard = 3
 }
 
 public class WaveManager : MonoBehaviour
 {
-    private const string WAVE_PARENT_NAME = "Waves";
-
     public static WaveManager instance;
 
     [Header("Wave Pools")]
-    [SerializeField] private int changePoolAfterWaves = 20;
+    [SerializeField] private int changePoolAfterWaves = 5;
     [SerializeField] private List<WavePool> wavePools = new List<WavePool>();
-    [SerializeField] private float waveDelay = 0.2f;
 
     [Header("Difficulty")]
     [SerializeField] public WaveDifficulty currentDifficulty = 0;       // Should not be tampered with; just for testing
@@ -59,8 +57,10 @@ public class WaveManager : MonoBehaviour
 
     public void SpawnWave()
     {
-        // Spawn wave using RandomWaveSelect()
-        StartCoroutine(SpawnWaveCo());
+        // Event for UI
+        onWaveStart?.Invoke(waveCounter);
+ 
+        Instantiate(currentWavePool.RandomWaveSelect(), gameObject.transform);
     }
 
     public void UpdateWaveCounter()         // Update waveCounter and check if we need to raise the difficulty
@@ -72,14 +72,5 @@ public class WaveManager : MonoBehaviour
             RaiseDifficulty();
             waveCountMult++;
         }
-    }
-
-    private IEnumerator SpawnWaveCo()
-    {
-        yield return new WaitForSeconds(waveDelay);
-        // Event for UI
-        onWaveStart?.Invoke(waveCounter);
-
-        GameObject wave = Instantiate(currentWavePool.RandomWaveSelect(), gameObject.transform);
     }
 }

@@ -52,6 +52,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moving Target
       objectReference: {fileID: 0}
+    - target: {fileID: 8937147030528563510, guid: debb08475a7c8db42beb5f9703af9b6d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2534964839176971238, guid: d875b9fabb62b97428564381d79fd4e2, type: 3}
+    - target: {fileID: 8937147030528563510, guid: debb08475a7c8db42beb5f9703af9b6d, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8937147030528563510, guid: debb08475a7c8db42beb5f9703af9b6d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1096399412291347702, guid: debb08475a7c8db42beb5f9703af9b6d, type: 3}
     m_RemovedGameObjects:
@@ -88,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 15
+  debug: 0
   movementVector: {x: 2, y: 5, z: 0}
   boundX: 5
   boundY: 5

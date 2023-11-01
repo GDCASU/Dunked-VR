@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a901d0937e39f4bafcafab95a4e615, type: 3}
+  m_Name: MedWavePool
+  m_EditorClassIdentifier: 
+  waveDifficulty: 0
+  waves:
+  - {fileID: 610139781233499613, guid: 81b9e09f472746745bc488ba9cfb802a, type: 3}
+  - {fileID: 3184213201880708053, guid: a9ba6e514645dc14b92a7495cfe52664, type: 3}
+  - {fileID: 1787655797408912370, guid: 52bd5b8b1dae3b949951709d62f9df0c, type: 3}
+  - {fileID: 5792945601905946036, guid: 0dbc59cf809b278488fab8ca797dc7b3, type: 3}
+  - {fileID: 3173191951114309101, guid: f11d9ad12d94d5644852e6d447f4f3df, type: 3}
