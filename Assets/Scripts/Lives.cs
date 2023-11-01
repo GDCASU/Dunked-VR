@@ -6,8 +6,7 @@ using UnityEngine;
 public class Lives : MonoBehaviour
 {
     // Events for UI and other stuff; the current playerLives is passed into the event
-    public static event Action<int> onLifeTaken;
-    public static event Action<int> onLifeGained;
+    public static event Action<int> onLifeUpdate;
     public static event Action onGameOver;
 
     [Header("Lives/Strikes")]
@@ -17,6 +16,13 @@ public class Lives : MonoBehaviour
     private void Start()
     {
         playerLives = playerMaxLives;
+
+        onLifeUpdate?.Invoke(playerLives);
+    }
+
+    public void ResetLives()
+    {
+        playerLives = playerMaxLives;
     }
 
     public void LoseLife()
@@ -24,7 +30,7 @@ public class Lives : MonoBehaviour
         if (playerLives > 0)
         {
             playerLives--;
-            onLifeTaken?.Invoke(playerLives);
+            onLifeUpdate?.Invoke(playerLives);
         }
         else
             GameOver();
@@ -35,7 +41,7 @@ public class Lives : MonoBehaviour
         if (playerLives < 3)
         {
             playerLives++;
-            onLifeGained?.Invoke(playerLives);
+            onLifeUpdate?.Invoke(playerLives);
         }
     }
 

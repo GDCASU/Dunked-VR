@@ -56,6 +56,7 @@ public class Wave : MonoBehaviour
     private void EndWave()  // Destroy the wave and update status of wave difficulty/etc; used when the player completes a wave
     {
         WaveManager.instance.UpdateWaveCounter();
+        WaveManager.instance.ResetTimer();
         Destroy(gameObject);
     }
 
