@@ -15,7 +15,7 @@ public class Target : MonoBehaviour
     [Header("Debug")]
     [SerializeField] bool debug;
 
-    protected virtual void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
         if (debug) Debug.Log(gameObject.name + " collided with " + other.gameObject.name);
         if (other.gameObject.tag == "Ball")

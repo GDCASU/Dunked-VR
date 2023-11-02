@@ -20,6 +20,8 @@ public class WaveManager : MonoBehaviour
     // Static Events
     public static event Action<float> onUpdateTimer;
 
+    [SerializeField] private Transform spawnTransform;
+
     [Header("Wave Pool")]
     [SerializeField] private int changePoolAfterWaves = 5;
     [SerializeField] private List<WavePool> wavePools = new List<WavePool>();
@@ -59,6 +61,11 @@ public class WaveManager : MonoBehaviour
             Destroy(gameObject);
 
         _lives = GetComponent<LivesManager>();
+    }
+
+    private void Start()
+    {
+        StartGame();
     }
 
     private void Update()
@@ -144,7 +151,7 @@ public class WaveManager : MonoBehaviour
         // Event for UI
         onWaveStart?.Invoke(waveCounter);
  
-        GameObject wave = Instantiate(currentWavePool.RandomWaveSelect(), gameObject.transform);
+        GameObject wave = Instantiate(currentWavePool.RandomWaveSelect(), spawnTransform.position, Quaternion.identity, gameObject.transform);
         currentWave = wave.gameObject.GetComponent<Wave>();
     }
 
