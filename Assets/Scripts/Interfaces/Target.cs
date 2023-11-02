@@ -18,6 +18,7 @@ public class Target : MonoBehaviour
     protected void OnTriggerEnter(Collider other)
     {
         if (debug) Debug.Log(gameObject.name + " collided with " + other.gameObject.name);
+
         if (other.gameObject.tag == "Ball")
         {
             if (debug) Debug.Log(other.gameObject.name + " was recognized as \"Ball\".");

@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a901d0937e39f4bafcafab95a4e615, type: 3}
   m_Name: EasyWavePool
   m_EditorClassIdentifier: 
-  waveDifficulty: 0
+  waveDifficulty: 1
   waves:
-  - {fileID: 6535421541080507825, guid: 61fd6f95f3388884d9a5894eb089e08e, type: 3}
-  - {fileID: 3184213201880708053, guid: 6bbac3dfd6c1e02419da89b1ebab9792, type: 3}
-  - {fileID: 326052426590331794, guid: 7c7d38f5441d45d43ab0ea2b50b5d5ca, type: 3}
-  - {fileID: 2206520727665773399, guid: 6560dba7f19678b4e8e931e4d1d555e7, type: 3}
-  - {fileID: 3132782233804859240, guid: cab8b3b0b4780cc4bb19885361287f97, type: 3}
+  - {fileID: 6535421541080507825, guid: fbf4e0b8f67f2ca46adfd1823960dc20, type: 3}
+  - {fileID: 6535421541080507825, guid: c12a0fee04ef1b046beddc1caa5d47da, type: 3}
+  - {fileID: 6535421541080507825, guid: 625ca8a1ae3796d458bba4ad76881d5c, type: 3}
+  - {fileID: 6535421541080507825, guid: e04cf85bee399f944bde2c7b1f220c54, type: 3}
+  - {fileID: 6535421541080507825, guid: e2f89c0013340f94ca7826ade9c4a587, type: 3}
+  - {fileID: 6535421541080507825, guid: 93f9d1ce09f2afa45b58ec799cfee5e5, type: 3}
+  - {fileID: 6535421541080507825, guid: 7f5aaddfcb131bd49b8f99ee29ad0711, type: 3}
+  - {fileID: 6535421541080507825, guid: 1ae1ba0be8e8646428f367a8d01d3c3a, type: 3}
+  - {fileID: 6535421541080507825, guid: 8d4787456aad0364aa87ab353ab0fcf8, type: 3}
+  - {fileID: 6535421541080507825, guid: 9cf526cde78f0664885c2c23e6d1ab24, type: 3}

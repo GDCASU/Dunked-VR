@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a901d0937e39f4bafcafab95a4e615, type: 3}
+  m_Name: VeryEasyWavePool
+  m_EditorClassIdentifier: 
+  waveDifficulty: 0
+  waves:
+  - {fileID: 6535421541080507825, guid: 61fd6f95f3388884d9a5894eb089e08e, type: 3}
+  - {fileID: 651608624355470590, guid: 6bbac3dfd6c1e02419da89b1ebab9792, type: 3}
+  - {fileID: 326052426590331794, guid: 7c7d38f5441d45d43ab0ea2b50b5d5ca, type: 3}
+  - {fileID: 2206520727665773399, guid: 6560dba7f19678b4e8e931e4d1d555e7, type: 3}
+  - {fileID: 3132782233804859240, guid: cab8b3b0b4780cc4bb19885361287f97, type: 3}
+  - {fileID: 6535421541080507825, guid: fed001439e8431841be546555bd4c2d9, type: 3}
+  - {fileID: 6535421541080507825, guid: f3acd49a0ebb71347a4bedde32b67542, type: 3}
+  - {fileID: 6535421541080507825, guid: 833d58919b133424e8545cae3510800f, type: 3}
+  - {fileID: 6535421541080507825, guid: 0fd453aa9f60be54dbcb3ced8aba9d13, type: 3}

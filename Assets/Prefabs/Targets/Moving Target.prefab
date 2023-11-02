@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3311776141012622215, guid: debb08475a7c8db42beb5f9703af9b6d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311776141012622215, guid: debb08475a7c8db42beb5f9703af9b6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -102,9 +106,9 @@ MonoBehaviour:
   score: 15
   debug: 0
   movementVector: {x: 2, y: 5, z: 0}
-  boundX: 5
-  boundY: 5
-  boundZ: 5
+  boundX: 2
+  boundY: 2
+  boundZ: 2
 --- !u!1001 &9214319554053901268
 PrefabInstance:
   m_ObjectHideFlags: 0
