@@ -78,6 +78,8 @@ public class WaveManager : MonoBehaviour
 
     public void StartGame()
     {
+        ScoreManager.instance.ResetScore();
+
         currentMaxTimerTime = maxTimerTime;
         timerTime = maxTimerTime;
 
@@ -93,7 +95,6 @@ public class WaveManager : MonoBehaviour
     public void EndGame()
     {
         // SAVE SCORE BEFORE RESET
-        ScoreManager.instance.ResetScore();
         isGamePlaying = false;
         waveCounter = 1;
         waveCountMult = 1;

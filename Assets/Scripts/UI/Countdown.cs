@@ -15,7 +15,7 @@ public class Countdown : MonoBehaviour
 
     public void UpdateTimeText(float timeremaining)
     {
-        timeremaining = Mathf.Floor(timeremaining);
+        timeremaining = Mathf.Floor(timeremaining) + 1;
         time.text = timeremaining.ToString();
     }
 }
