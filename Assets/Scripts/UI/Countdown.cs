@@ -5,7 +5,6 @@ using TMPro;
 
 public class Countdown : MonoBehaviour
 {
-
     [SerializeField] private TMP_Text time;
     // Start is called before the first frame update
     void Start()
