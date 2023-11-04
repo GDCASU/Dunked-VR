@@ -5,29 +5,25 @@ using UnityEngine;
 public class DunkTank : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] GameObject Npc;
-    [SerializeField] Transform NpcResetTransform;
+    [SerializeField] GameObject Npc;                // This is the NPC that gets dunked. please make sure it has a rigidbody.
+    [SerializeField] Transform NpcResetTransform;   // This holds the reset information for the npc. It has to be a different transform than the npc's transform.
     Rigidbody NpcRb;
 
-    [SerializeField] Transform PlatformHinge;
+    [SerializeField] Transform PlatformHinge;       // This is the "hinge" of the platform
 
     [Header("Values")]
-    [SerializeField] float rotSpeed = 1.0f;
-    [SerializeField] float resetTime = 2.0f;
+    [SerializeField] float rotSpeed = 1.0f;         // Controls speed of rotation when the dunk tank dunks
+    [SerializeField] float resetTime = 2.0f;        // Controls the auto-reset of the platform. If > 0, it resets automatically. Otherwise it does not auto reset.
     float amountRotated = 0f;
 
-    [SerializeField] float SlamForce = 0f;
+    [SerializeField] float SlamForce = 0f;          // How fast you want the npc slammed towards the ground.
 
     [Header("Debugging")]
     [SerializeField] bool AutoDunk = false;
 
     bool dunking = false;
 
-    private void Awake()
-    {
-        WaveManager.onWaveComplete += Dunk;
-    }
-
+    // Call this function to dunk the npc
     public void Dunk()
     {
         dunking = true;
@@ -35,6 +31,7 @@ public class DunkTank : MonoBehaviour
         if(resetTime > 0) Invoke(nameof(ResetPlatform), resetTime);
     }
 
+    // Call this function to reset the platform. Automatically called if resetTime > 0.
     public void ResetPlatform()
     {
         dunking = false;
@@ -47,6 +44,11 @@ public class DunkTank : MonoBehaviour
         Npc.transform.rotation = NpcResetTransform.rotation;
 
         NpcRb.isKinematic = false;
+    }
+
+    private void Awake()
+    {
+        WaveManager.onWaveComplete += Dunk;
     }
 
     private void Start()
