@@ -5,11 +5,15 @@ using UnityEngine;
 public class DunkTank : MonoBehaviour
 {
     [Header("References")]
+    [SerializeField] GameObject Npc;
+    [SerializeField] Transform NpcResetTransform;
+    Rigidbody NpcRb;
+
     [SerializeField] Transform PlatformHinge;
-    [SerializeField] Rigidbody NpcRb;
 
     [Header("Values")]
     [SerializeField] float rotSpeed = 1.0f;
+    [SerializeField] float resetTime = 2.0f;
     float amountRotated = 0f;
 
     [SerializeField] float SlamForce = 0f;
@@ -27,17 +31,39 @@ public class DunkTank : MonoBehaviour
     public void Dunk()
     {
         dunking = true;
+
+        if(resetTime > 0) Invoke(nameof(ResetPlatform), resetTime);
     }
 
     public void ResetPlatform()
     {
+        dunking = false;
+        NpcRb.isKinematic = true;
+
         PlatformHinge.Rotate(Vector3.right, -amountRotated);
         amountRotated = 0f;
+
+        Npc.transform.position = NpcResetTransform.position;
+        Npc.transform.rotation = NpcResetTransform.rotation;
+
+        NpcRb.isKinematic = false;
     }
 
     private void Start()
     {
         if (AutoDunk) Invoke(nameof(Dunk), 1f);
+
+        if(Npc == null)
+        {
+            Debug.LogError("DunkTank.cs error: Npc reference not set.");
+            Destroy(gameObject);
+            return;
+        }
+
+        NpcResetTransform.position = Npc.transform.position;
+        NpcResetTransform.rotation = Npc.transform.rotation;
+        NpcRb = Npc.GetComponent<Rigidbody>();
+        
     }
 
     private void Update()

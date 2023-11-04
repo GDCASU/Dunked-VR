@@ -463,6 +463,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3458258569735692497, guid: fd8521da3ca210942b310c91179abd07, type: 3}
+      propertyPath: AutoDunk
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5646815875634711132, guid: fd8521da3ca210942b310c91179abd07, type: 3}
       propertyPath: m_Name
       value: DunkTank
