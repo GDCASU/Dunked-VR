@@ -159,8 +159,6 @@ public class WaveManager : MonoBehaviour
 
     public void UpdateWaveCounter()         // Update waveCounter and check if we need to raise the difficulty
     {
-        onWaveComplete?.Invoke();
-
         waveCounter++;
         // changeWavePoolAfter * i = nextWavePoolChange; Ex: 10 * 2 = 20 next WavePool after Wave 20
         if (waveCounter >= changePoolAfterWaves * waveCountMult)
@@ -168,5 +166,13 @@ public class WaveManager : MonoBehaviour
             RaiseDifficulty();
             waveCountMult++;
         }
+    }
+
+    public void WaveCompleted()
+    {
+        ResetTimer();
+        UpdateWaveCounter();
+        SpawnWave();
+        onWaveComplete?.Invoke();
     }
 }
