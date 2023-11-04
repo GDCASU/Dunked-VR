@@ -19,6 +19,7 @@ public class WaveManager : MonoBehaviour
 
     // Static Events
     public static event Action<float> onUpdateTimer;
+    public static event Action onWaveComplete;
 
     [SerializeField] private Transform spawnTransform;
 
@@ -165,5 +166,13 @@ public class WaveManager : MonoBehaviour
             RaiseDifficulty();
             waveCountMult++;
         }
+    }
+
+    public void WaveCompleted()
+    {
+        ResetTimer();
+        UpdateWaveCounter();
+        SpawnWave();
+        onWaveComplete?.Invoke();
     }
 }
