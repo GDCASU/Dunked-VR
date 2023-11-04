@@ -19,6 +19,11 @@ public class DunkTank : MonoBehaviour
 
     bool dunking = false;
 
+    private void Awake()
+    {
+        WaveManager.onWaveComplete += Dunk;
+    }
+
     public void Dunk()
     {
         dunking = true;

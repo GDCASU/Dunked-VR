@@ -19,6 +19,7 @@ public class WaveManager : MonoBehaviour
 
     // Static Events
     public static event Action<float> onUpdateTimer;
+    public static event Action onWaveComplete;
 
     [SerializeField] private Transform spawnTransform;
 
@@ -158,6 +159,8 @@ public class WaveManager : MonoBehaviour
 
     public void UpdateWaveCounter()         // Update waveCounter and check if we need to raise the difficulty
     {
+        onWaveComplete?.Invoke();
+
         waveCounter++;
         // changeWavePoolAfter * i = nextWavePoolChange; Ex: 10 * 2 = 20 next WavePool after Wave 20
         if (waveCounter >= changePoolAfterWaves * waveCountMult)
