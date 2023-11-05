@@ -6,10 +6,11 @@ using UnityEngine.Events;
 
 public enum WaveDifficulty
 {
-    easy = 0,
-    medium = 1,
-    hard = 2,
-    veryHard = 3
+    veryEasy = 0,
+    easy = 1,
+    medium = 2,
+    hard = 3,
+    veryHard = 4
 }
 
 public class WaveManager : MonoBehaviour
@@ -21,9 +22,11 @@ public class WaveManager : MonoBehaviour
     public static event Action<float> onUpdateTimer;
     public static event Action onWaveComplete;
 
-    [SerializeField] private Transform spawnTransform;
+    [Header("Score")]
+    [SerializeField] private int dunkScore = 50;
 
-    [Header("Wave Pool")]
+    [Header("Waves")]
+    [SerializeField] private Transform spawnTransform;
     [SerializeField] private int changePoolAfterWaves = 5;
     [SerializeField] private List<WavePool> wavePools = new List<WavePool>();
 
@@ -177,6 +180,7 @@ public class WaveManager : MonoBehaviour
         ResetTimer();
         UpdateWaveCounter();
         SpawnWave();
+        ScoreManager.instance.AddScore(dunkScore);
         onWaveComplete?.Invoke();
     }
 }

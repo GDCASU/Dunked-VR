@@ -156,5 +156,5 @@ MonoBehaviour:
   score: 20
   debug: 0
   pivotTransform: {fileID: 0}
-  moveSpeed: -5
-  angularSpeed: 100
+  moveSpeed: -1
+  angularSpeed: 50

@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61a901d0937e39f4bafcafab95a4e615, type: 3}
-  m_Name: HardWavePool
+  m_Name: MedWavePool
   m_EditorClassIdentifier: 
   waveDifficulty: 0
   waves:
-  - {fileID: 6535421541080507825, guid: 50d81ca11fd167a41b0e3178c845eb1e, type: 3}
-  - {fileID: 6535421541080507825, guid: 5b530d74491cdb440b0b0b14093a340f, type: 3}
+  - {fileID: 6535421541080507825, guid: dcb2ec7f1ee9b424ca42cbc300bbc03c, type: 3}
+  - {fileID: 6535421541080507825, guid: 867290742ec453c4cb99b77c5355c32c, type: 3}
+  - {fileID: 4081465380338569940, guid: e0ff12777c9ae7749959c22096b5e91c, type: 3}
+  - {fileID: 4081465380338569940, guid: 9ad8ddad5605d9e4fb4cb2cb2d77cdfc, type: 3}

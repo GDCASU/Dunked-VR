@@ -6,8 +6,7 @@ using UnityEngine;
 public class RotatingTarget : Target
 {
     [SerializeField] private Transform pivotTransform;
-    [SerializeField] private float moveSpeed = -5f;
-    [SerializeField] private float angularSpeed = 100f;
+    [SerializeField] private float angularSpeed = -5f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,19 +18,12 @@ public class RotatingTarget : Target
     // Update is called once per frame
     void Update()
     {
-        Move();
         Rotate();
-    }
-
-    void Move()
-    {
-        float speed = moveSpeed * Time.deltaTime;
-        transform.Translate(new Vector3(speed, 0, 0));
     }
 
     void Rotate()
     {
         float rotateAmt = angularSpeed * Time.deltaTime;
-        transform.Rotate(Vector3.forward, rotateAmt);
+        transform.RotateAround(pivotTransform.position, Vector3.forward, rotateAmt);
     }
 }

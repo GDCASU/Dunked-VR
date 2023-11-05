@@ -6,7 +6,7 @@ public class MovingTarget : Target
 {
     [Header("Movement")]
     [SerializeField] private Vector3 movementVector;
-    [SerializeField] private float boundX, boundY, boundZ;
+    [SerializeField] private float boundLeft, boundRight, boundUp, boundDown, boundFwd, boundBack;
 
     void Update()
     {
@@ -15,15 +15,15 @@ public class MovingTarget : Target
 
     void Move()
     {
-        if (transform.position.x > boundX || transform.position.x < -boundX)
+        if (transform.position.x > boundRight || transform.position.x < boundLeft)
         {
             movementVector.x = -movementVector.x;
         }
-        if (transform.position.y > boundY || transform.position.y < -boundY)
+        if (transform.position.y > boundUp || transform.position.y < boundDown)
         {
             movementVector.y = -movementVector.y;
         }
-        if (transform.position.z > boundZ || transform.position.z < -boundZ)
+        if (transform.position.z > boundFwd || transform.position.z < boundBack)
         {
             movementVector.z = -movementVector.z;
         }

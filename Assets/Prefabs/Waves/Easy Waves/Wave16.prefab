@@ -95,12 +95,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2722082599026431584, guid: 718e6442a9d49ae49aaccdf6f7c92881, type: 3}
+      propertyPath: boundY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722082599026431584, guid: 718e6442a9d49ae49aaccdf6f7c92881, type: 3}
       propertyPath: movementVector.x
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2722082599026431584, guid: 718e6442a9d49ae49aaccdf6f7c92881, type: 3}
       propertyPath: movementVector.y
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5014585287874747238, guid: 718e6442a9d49ae49aaccdf6f7c92881, type: 3}
       propertyPath: m_Name

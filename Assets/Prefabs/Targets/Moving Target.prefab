@@ -106,9 +106,12 @@ MonoBehaviour:
   score: 15
   debug: 0
   movementVector: {x: 2, y: 5, z: 0}
-  boundX: 2
-  boundY: 2
-  boundZ: 2
+  boundLeft: -2
+  boundRight: 2
+  boundUp: 3.5
+  boundDown: 0.5
+  boundFwd: 0
+  boundBack: 0
 --- !u!1001 &9214319554053901268
 PrefabInstance:
   m_ObjectHideFlags: 0
