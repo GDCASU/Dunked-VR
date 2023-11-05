@@ -7,6 +7,7 @@ public class LivesManager : MonoBehaviour
 {
     // Events for UI and other stuff; the current playerLives is passed into the event
     public static event Action<int> onLifeUpdate;
+    public static event Action onStrike;
     public static event Action onGameOver;
 
     [Header("Lives/Strikes")]
@@ -32,6 +33,7 @@ public class LivesManager : MonoBehaviour
         {
             playerLives--;
             onLifeUpdate?.Invoke(playerLives);
+            onStrike?.Invoke();
         }
         else
             GameOver();
