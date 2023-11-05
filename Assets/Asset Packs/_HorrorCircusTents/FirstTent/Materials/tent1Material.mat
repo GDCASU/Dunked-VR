@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: tent1Material
+  m_Shader: {fileID: 4800000, guid: a2991a03359ecf049a1a006c200406cc, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _EMISSIONSWITCH_ON
+  - _SMOOTHFROMMAPSWITCH_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Albedo:
+        m_Texture: {fileID: 2800000, guid: 695849f181cba13458f81d78fc8bbe0e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cubemap:
+        m_Texture: {fileID: 8900000, guid: 34473faff2960f14994aa6fd5557b09b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CubemapBlured:
+        m_Texture: {fileID: 8900000, guid: 3ebe31ee616ea094597e60a09cdc6d3a, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cubmap:
+        m_Texture: {fileID: 8900000, guid: 7674bef4d4245cc4a859cae29f9fa455, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Diffuse:
+        m_Texture: {fileID: 2800000, guid: 695849f181cba13458f81d78fc8bbe0e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: 695849f181cba13458f81d78fc8bbe0e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HeightMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _IllumText:
+        m_Texture: {fileID: 2800000, guid: 695849f181cba13458f81d78fc8bbe0e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicMap:
+        m_Texture: {fileID: 2800000, guid: ab95c9f482a502d49ae7777191f17dd4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallnessMap:
+        m_Texture: {fileID: 2800000, guid: ab95c9f482a502d49ae7777191f17dd4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: 558b99ad8fa251f4a863bada0eb3bb32, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Shining:
+        m_Texture: {fileID: 2800000, guid: 58f3ddcccf80e504eafdc716a9f47b67, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SmoothnessMap:
+        m_Texture: {fileID: 2800000, guid: 58f3ddcccf80e504eafdc716a9f47b67, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _EmissionMultiplayer: 5.65
+    - _EmissionSwitch: 1
+    - _GlossHigh: 0.7169596
+    - _GlossLow: 0.1666343
+    - _HighSpecMultiplayer: 1.91453
+    - _MetCubeMultiplayer: 4
+    - _MetalicBrightnes: 0
+    - _Metallic: 1
+    - _MetallnessMultiplayer: 0.6
+    - _NormalMapDepth: 1
+    - _ParalaxOffset: 0.001
+    - _RoughContrast: 1
+    - _SmoothFromMapSwitch: 1
+    - _SmoothRough: 0
+    - _Snoothness: 1
+    - _TilingX: 1
+    - _TilingY: 1
+    - __dirty: 1
+    m_Colors:
+    - _AlbedoColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _CubeColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _CubemapColor: {r: 0, g: 0, b: 0, a: 1}
+    - _DiffColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 0}
+    - _HighSpecColor: {r: 1, g: 1, b: 1, a: 1}
+    - _IllumColor: {r: 1, g: 1, b: 1, a: 1}
+    - _LowSpecColor: {r: 0.07352942, g: 0.07352942, b: 0.07352942, a: 1}
+  m_BuildTextureStacks: []
