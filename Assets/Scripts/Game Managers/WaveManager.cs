@@ -66,7 +66,8 @@ public class WaveManager : MonoBehaviour
 
     private void Start()
     {
-        StartGame();
+        // StartGame();
+        isGamePlaying = false;
     }
 
     private void Update()
@@ -79,18 +80,21 @@ public class WaveManager : MonoBehaviour
 
     public void StartGame()
     {
-        ScoreManager.instance.ResetScore();
-
-        currentMaxTimerTime = maxTimerTime;
-        timerTime = maxTimerTime;
-
-        if (wavePools.Count > 0)
+        if (!isGamePlaying)
         {
-            currentWavePool = wavePools[0];     // Start currentWavePool at first wave in list
-            SpawnWave();                       // Spawn the first wave after short delay
-        }
+            ScoreManager.instance.ResetScore();
 
-        isGamePlaying = true;
+            currentMaxTimerTime = maxTimerTime;
+            timerTime = maxTimerTime;
+
+            if (wavePools.Count > 0)
+            {
+                currentWavePool = wavePools[0];     // Start currentWavePool at first wave in list
+                SpawnWave();                       // Spawn the first wave after short delay
+            }
+
+            isGamePlaying = true;
+        }
     }
 
     public void EndGame()
@@ -159,8 +163,6 @@ public class WaveManager : MonoBehaviour
 
     public void UpdateWaveCounter()         // Update waveCounter and check if we need to raise the difficulty
     {
-        onWaveComplete?.Invoke();
-
         waveCounter++;
         // changeWavePoolAfter * i = nextWavePoolChange; Ex: 10 * 2 = 20 next WavePool after Wave 20
         if (waveCounter >= changePoolAfterWaves * waveCountMult)
@@ -168,5 +170,13 @@ public class WaveManager : MonoBehaviour
             RaiseDifficulty();
             waveCountMult++;
         }
+    }
+
+    public void WaveCompleted()
+    {
+        ResetTimer();
+        UpdateWaveCounter();
+        SpawnWave();
+        onWaveComplete?.Invoke();
     }
 }
