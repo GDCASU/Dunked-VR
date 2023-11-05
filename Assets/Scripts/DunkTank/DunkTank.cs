@@ -28,7 +28,7 @@ public class DunkTank : MonoBehaviour
     {
         dunking = true;
 
-        if(resetTime > 0) Invoke(nameof(ResetPlatform), resetTime);
+        if (resetTime > 0) Invoke(nameof(ResetPlatform), resetTime);
     }
 
     // Call this function to reset the platform. Automatically called if resetTime > 0.
@@ -37,13 +37,11 @@ public class DunkTank : MonoBehaviour
         dunking = false;
         NpcRb.isKinematic = true;
 
-        PlatformHinge.Rotate(Vector3.right, -amountRotated);
+        PlatformHinge.Rotate(Vector3.forward, -amountRotated);
         amountRotated = 0f;
 
         Npc.transform.position = NpcResetTransform.position;
         Npc.transform.rotation = NpcResetTransform.rotation;
-
-        NpcRb.isKinematic = false;
     }
 
     private void Awake()
@@ -65,7 +63,8 @@ public class DunkTank : MonoBehaviour
         NpcResetTransform.position = Npc.transform.position;
         NpcResetTransform.rotation = Npc.transform.rotation;
         NpcRb = Npc.GetComponent<Rigidbody>();
-        
+        NpcRb.isKinematic = true;
+
     }
 
     private void Update()
@@ -75,9 +74,9 @@ public class DunkTank : MonoBehaviour
 
     void RotatePlatform()
     {
-        PlatformHinge.Rotate(Vector3.right, Time.deltaTime * rotSpeed);
+        PlatformHinge.Rotate(Vector3.forward, Time.deltaTime * rotSpeed);
         amountRotated += Time.deltaTime * rotSpeed;
-
+        NpcRb.isKinematic = false;
         NpcRb.AddForce(Vector3.down * SlamForce, ForceMode.Impulse);
     }
 }
