@@ -155,6 +155,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 20
   debug: 0
+  breakSound: {fileID: 8300000, guid: d479b47bf1126e54f94c8c223ac5fabb, type: 3}
   pivotTransform: {fileID: 0}
-  moveSpeed: -1
   angularSpeed: 50

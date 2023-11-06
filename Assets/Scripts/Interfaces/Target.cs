@@ -15,6 +15,9 @@ public class Target : MonoBehaviour
     [Header("Debug")]
     [SerializeField] bool debug;
 
+    [Header("Sound")]
+    [SerializeField] AudioClip breakSound;
+
     protected void OnTriggerEnter(Collider other)
     {
         if (debug) Debug.Log(gameObject.name + " collided with " + other.gameObject.name);
@@ -22,6 +25,7 @@ public class Target : MonoBehaviour
         if (other.gameObject.tag == "Ball")
         {
             if (debug) Debug.Log(other.gameObject.name + " was recognized as \"Ball\".");
+            AudioManager.instance.PlaySFX(breakSound);
             // Update Player Score
             ScoreManager.instance.AddScore(score);
             // Update wave stuff

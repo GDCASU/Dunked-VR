@@ -105,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 15
   debug: 0
+  breakSound: {fileID: 8300000, guid: d479b47bf1126e54f94c8c223ac5fabb, type: 3}
   movementVector: {x: 2, y: 5, z: 0}
   boundLeft: -2
   boundRight: 2

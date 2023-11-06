@@ -70,6 +70,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1096399412291347702, guid: debb08475a7c8db42beb5f9703af9b6d, type: 3}
+      propertyPath: breakSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d479b47bf1126e54f94c8c223ac5fabb, type: 3}
     - target: {fileID: 3311776141012622215, guid: debb08475a7c8db42beb5f9703af9b6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

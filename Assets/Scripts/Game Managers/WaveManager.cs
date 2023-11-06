@@ -41,6 +41,13 @@ public class WaveManager : MonoBehaviour
     [Header("Unity Events")]
     [SerializeField] public UnityEvent<int> onWaveStart;
 
+    [Header("Sound")]
+    [SerializeField] private AudioClip booSound;
+    [SerializeField] private AudioClip strikeSound;
+    [SerializeField] private AudioClip cheerSound;
+    [SerializeField] private AudioClip splashSound;
+
+
     // Private Flags
     private bool isGamePlaying = false;
     
@@ -71,6 +78,7 @@ public class WaveManager : MonoBehaviour
     {
         // StartGame();
         isGamePlaying = false;
+        LivesManager.onStrike += Strike;
     }
 
     private void Update()
@@ -86,6 +94,7 @@ public class WaveManager : MonoBehaviour
         if (!isGamePlaying)
         {
             ScoreManager.instance.ResetScore();
+            AudioManager.instance.PlayMusic(Music.Game);
 
             currentMaxTimerTime = maxTimerTime;
             timerTime = maxTimerTime;
@@ -108,6 +117,7 @@ public class WaveManager : MonoBehaviour
         waveCountMult = 1;
         currentDifficulty = 0;
         _lives.ResetLives();
+        AudioManager.instance.PlayMusic(Music.Ambient);
     }
 
     #region Timer
@@ -177,10 +187,18 @@ public class WaveManager : MonoBehaviour
 
     public void WaveCompleted()
     {
+        AudioManager.instance.PlaySFX(cheerSound);
+        AudioManager.instance.PlaySFX(splashSound);
         ResetTimer();
         UpdateWaveCounter();
         SpawnWave();
         ScoreManager.instance.AddScore(dunkScore);
         onWaveComplete?.Invoke();
+    }
+
+    private void Strike()
+    {
+        AudioManager.instance.PlaySFX(booSound);
+        AudioManager.instance.PlaySFX(strikeSound);
     }
 }
